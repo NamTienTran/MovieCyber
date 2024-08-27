@@ -102,4 +102,63 @@ header p{
     letter-spacing: 4px;
     color: white;
     background: linear-gradient(to right, #fbbd61, #ec7532);
+    position: relative;
+    /* che đi thẻ con nằm ngoài vùng của thẻ cha */
+    overflow: hidden;
+    outline: none;
+}
+
+.movieCarousel__trailer button:hover{
+    color: white;
+}
+
+/* B1. xây dựng overlay phủ lên thẻ cha (button) */
+.movieCarousel__trailer button::before{
+    content: '';
+    width: 110%;
+    height: 100%;
+    display: block;
+    background-color: #ec7532;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    /* vị trí chưa hover */
+    transform: skewX(30deg) translateX(-110%);
+    transition: all 1s;
+}
+
+.movieCarousel__trailer button:hover:before{
+    transform: skewX(30deg) translateX(-10px);
+}
+
+.movieCarousel__trailer button span{
+    position: relative;
+    z-index: 2;
+}
+
+#carouselMovie .carousel-indicators li{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid white;
+    background: transparent;
+    opacity: 1;
+    box-sizing: border-box;
+    /* background-clip: border-box; */
+}
+
+#carouselMovie .carousel-indicators li.active{
+    background-color: white;
+}
+
+#carouselMovie .carousel-indicators{
+    justify-content: flex-start;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-right: 0;
+    margin-left: 0;
+    padding-right: 30px;
+    padding-left: 30px;
 }

@@ -1,0 +1,105 @@
+/* GLOBAL */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{ 
+  font-family: "Roboto Condensed", sans-serif;
+  color: #717171;
+}
+
+/* line style */
+.line::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    /* Giá trị thứ 1: hướng trải màu
+        to right: trái qua phải
+        to left: phải qua trái
+        to bottom: từ trên xuống
+        to top: từ dưới lên
+
+        giá trị thứ 2: màu bắt đầu
+        giá trị thứ 3: màu kết thúc
+    */
+    background: linear-gradient(to right,#fbbd61, #ec7532); /* để sử dụng được màu gradient thì bắt buộc phải dùng background hoặc background-image, background-color chỉ sử dụng được màu đơn */
+    display: block;
+    box-shadow: 0 0 20px 0 #fbbd61;
+    transition: all 0.5s;
+}
+
+.line:hover:after{
+    width: 100%;
+}
+
+.line.active::after{
+    width: 100%;
+}
+
+/* HEADER */
+header p{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#movieNavBar .navbar-nav{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#movieNavBar .navbar-nav .nav-item .nav-link{
+    color: white;
+    letter-spacing: 3px;
+    line-height: 0.8em;
+    padding: 20px 24px;
+}
+
+/* CAROUSEL */
+#carouselMovie .carousel-item .carousel-caption{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+}
+    /* first-child: ưu tiên thứ tự trước, rồi mới đến loại => do đó giả sử đang áp dụng cho thẻ <p>, so sánh nếu thẻ đầu ko phải thẻ p nó sẽ bỏ qua, ngưng.*/
+    /* first-of-type: ưu tiên loại thẻ trước, rồi mới đến thứ tự */
+#carouselMovie .carousel-item .carousel-caption p:first-of-type{
+    font-size: 0.875rem;
+    color: #fbbd61;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+#carouselMovie .carousel-item .carousel-caption p:last-of-type{
+    font-size: 1.125rem;
+    margin-bottom: 20px;
+}
+
+#carouselMovie .carousel-item .carousel-caption h2{
+    font-size: 3.25rem;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.movieCarousel__trailer>span{  /*">" gọi đến thẻ con trực tiếp */
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid white;
+    font-size: 0.8rem;
+    display: inline-block;
+    margin-right: 8px;
+    /* cho chữ nằm giữa hình tròn */
+    text-align: center;
+    line-height: 48px;
+}
+
+.movieCarousel__trailer button{
+    padding: 12px 24px;
+    border: none;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+    color: white;
+    background: linear-gradient(to right, #fbbd61, #ec7532);
+}

@@ -9,6 +9,12 @@ html, body{
   color: #717171;
 }
 
+/* Định dạng màu khi quét tô khối trong web */
+::selection{
+    background-color: #ec7532;
+    color: white;
+}
+
 /* line style */
 .line::after{
     content: '';
@@ -96,6 +102,7 @@ header p{
     width: 100%;
     transform: translate(-50%, -100%);
     transition: transform 0.5s;
+    z-index: 16;
 }
 
 /* CAROUSEL */
@@ -454,8 +461,53 @@ header p{
     border-radius: 50%;
     font-size: 25px;
     transition: all 0.5s;
+    color: white;
 }
 
 .comingSoon__video:hover i{
     transform: translate(-50%, -50%) scale(0.9);
+}
+
+/* MOVIE LIST */
+.movieList{
+    background-color: #010101;
+}
+
+.movieList__item{
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.movieList__overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #010101;
+    opacity: 0.6;
+    transition: all 0.5s;
+}
+
+.movieList__item:hover .movieList__overlay{
+    opacity: 0;
+}
+
+/* CONTACT */
+.contact__content{
+    text-align: center;
+}
+
+.contact__content p:first-child{
+    font-size: 23px;
+    color: #4a4a4a;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+.contact__content p:last-child{
+    font-size: 46px;
+    color: #fbbd61;
+    text-decoration: none;
 }

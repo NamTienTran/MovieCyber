@@ -24,6 +24,9 @@
     <!-- thư viện animate CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
+    <!-- Thư viện venobox -->
+    <link rel="stylesheet" href="./css/venobox.min.css">
+
     <!-- index css -->
     <link rel="stylesheet" href="./css/index.css">
 </head>
@@ -676,14 +679,18 @@
                             30 Septemper 2020
                         </span>
                     </div>
-                    <p>When one of their own is kidnapped by an angry gangster, the Wolf Pack must track down Mr. Chow, who has escaped from prison and is on the run.</p>
+                    <p>When one of their own is kidnapped by an angry gangster, the Wolf Pack must track down Mr. Chow,
+                        who has escaped from prison and is on the run.</p>
                     <a href="#">MORE INFO <i class="fa fa-angle-right"></i></a>
                 </div>
                 <div class="col-6">
-                    <div class="comingSoon__video">
-                        <img class="img-fluid" src="./img/slide-3-video.png" alt="slide 3">
-                        <i class="fa fa-play"></i>
-                    </div>
+                    <a class="my-video-links" data-autoplay="true" data-vbtype="video"
+                        href="https://youtu.be/g9nnv3zPwe4?si=1fwXJP-xKbsVFSl6">Youtube
+                        <div class="comingSoon__video">
+                            <img class="img-fluid" src="./img/slide-3-video.png" alt="slide 3">
+                            <i class="fa fa-play"></i>
+                        </div>
+                    </a>
 
                 </div>
             </div>
@@ -691,15 +698,58 @@
 
     </section>
     <!-- MOVIELIST -->
-    <section class="movieList">
+    <section class="movieList section">
         <div class="container">
+            <div class="row">
+                <div class="col-2">
+                    <div class="movieList__item">
+                        <img class="img-fluid" src="./img/movie-9.jpg" alt="movie 9">
+                        <div class="movieList__overlay"></div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="movieList__item">
+                        <img class="img-fluid" src="./img/movie-8.jpg" alt="movie 8">
+                        <div class="movieList__overlay"></div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="movieList__item">
+                        <img class="img-fluid" src="./img/movie-11.jpg" alt="movie 11">
+                        <div class="movieList__overlay"></div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="movieList__item">
+                        <img class="img-fluid" src="./img/movie-13.jpg" alt="movie 9">
+                        <div class="movieList__overlay"></div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="movieList__item">
+                        <img class="img-fluid" src="./img/movie-12.jpg" alt="movie 9">
+                        <div class="movieList__overlay"></div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="movieList__item">
+                        <img class="img-fluid" src="./img/movie-14.jpg" alt="movie 9">
+                        <div class="movieList__overlay"></div>
+                    </div>
+                </div>
+            </div>
 
         </div>
 
 
     </section>
     <!-- CONTACT -->
-    <section class="contact"></section>
+    <section class="contact section">
+        <div class="contact__content">
+            <p>Need help? Contact our support team on</p>
+            <p><a href="tel:0961051014"></a>096 105 1014</p>
+        </div>
+    </section>
     <!-- FOOTER -->
     <footer></footer>
 
@@ -711,6 +761,21 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
         crossorigin="anonymous"></script>
+
+    <!-- Venobox JS -->
+    <script src="./js/venobox.min.js"></script>
+    <script>
+        //Cách 1: cách làm cũ 
+        //$(document).ready(function () {
+        //     $('.my-video-links').venobox()
+        // })
+
+        //Cách 2: cách mới
+        new VenoBox({
+            selector: '.my-video-links',
+        });
+
+    </script>
 
     <!-- MAIN JS -->
     <script>

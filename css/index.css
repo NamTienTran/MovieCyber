@@ -1,22 +1,24 @@
 /* GLOBAL */
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-html, body{ 
-  font-family: "Roboto Condensed", sans-serif;
-  color: #717171;
+
+html,
+body {
+    font-family: "Roboto Condensed", sans-serif;
+    color: #717171;
 }
 
 /* Định dạng màu khi quét tô khối trong web */
-::selection{
+::selection {
     background-color: #ec7532;
     color: white;
 }
 
 /* line style */
-.line::after{
+.line::after {
     content: '';
     width: 0;
     height: 3px;
@@ -29,25 +31,26 @@ html, body{
         giá trị thứ 2: màu bắt đầu
         giá trị thứ 3: màu kết thúc
     */
-    background: linear-gradient(to right,#fbbd61, #ec7532); /* để sử dụng được màu gradient thì bắt buộc phải dùng background hoặc background-image, background-color chỉ sử dụng được màu đơn */
+    background: linear-gradient(to right, #fbbd61, #ec7532);
+    /* để sử dụng được màu gradient thì bắt buộc phải dùng background hoặc background-image, background-color chỉ sử dụng được màu đơn */
     display: block;
     box-shadow: 0 0 20px 0 #fbbd61;
     transition: all 0.5s;
 }
 
-.line:hover:after{
+.line:hover:after {
     width: 100%;
 }
 
-.line.active::after{
+.line.active::after {
     width: 100%;
 }
 
-.section{
+.section {
     padding: 75px 0;
 }
 
-.title{
+.title {
     color: #ec7532;
     font-size: 1.125rem;
     border-bottom: 1px solid #d8d8d8;
@@ -56,7 +59,7 @@ html, body{
     margin-bottom: 40px;
 }
 
-.title::after{
+.title::after {
     content: '';
     background: linear-gradient(to right, #fbbd61, #ec7532);
     width: 125px;
@@ -65,13 +68,13 @@ html, body{
     margin-top: 20px;
 }
 
-.title--white{
+.title--white {
     color: white;
     border-bottom: 1px solid #333;
 }
 
 /* HEADER */
-header{
+header {
     position: absolute;
     top: 20px;
     left: 50%;
@@ -79,23 +82,23 @@ header{
     z-index: 2;
 }
 
-header p{
+header p {
     font-size: 14px;
     font-weight: bold;
 }
 
-#movieNavBar .navbar-nav{
+#movieNavBar .navbar-nav {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-#movieNavBar .navbar-nav .nav-item .nav-link{
+#movieNavBar .navbar-nav .nav-item .nav-link {
     color: white;
     letter-spacing: 3px;
     line-height: 0.8em;
     padding: 20px 24px;
 }
 
-#headerFixed{
+#headerFixed {
     background-color: #010101;
     position: fixed;
     top: 0;
@@ -106,15 +109,16 @@ header p{
 }
 
 /* CAROUSEL */
-#carouselMovie .carousel-item .carousel-caption{
+#carouselMovie .carousel-item .carousel-caption {
     top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: left;
 }
-    /* first-child: ưu tiên thứ tự trước, rồi mới đến loại => do đó giả sử đang áp dụng cho thẻ <p>, so sánh nếu thẻ đầu ko phải thẻ p nó sẽ bỏ qua, ngưng.*/
-    /* first-of-type: ưu tiên loại thẻ trước, rồi mới đến thứ tự */
-#carouselMovie .carousel-item .carousel-caption p:first-of-type{
+
+/* first-child: ưu tiên thứ tự trước, rồi mới đến loại => do đó giả sử đang áp dụng cho thẻ <p>, so sánh nếu thẻ đầu ko phải thẻ p nó sẽ bỏ qua, ngưng.*/
+/* first-of-type: ưu tiên loại thẻ trước, rồi mới đến thứ tự */
+#carouselMovie .carousel-item .carousel-caption p:first-of-type {
     font-size: 0.875rem;
     color: #fbbd61;
     letter-spacing: 2px;
@@ -122,22 +126,23 @@ header p{
     animation-delay: 0.5s;
 }
 
-#carouselMovie .carousel-item .carousel-caption p:last-of-type{
+#carouselMovie .carousel-item .carousel-caption p:last-of-type {
     font-size: 1.125rem;
     margin-bottom: 20px;
 }
 
-#carouselMovie .carousel-item .carousel-caption h2{
+#carouselMovie .carousel-item .carousel-caption h2 {
     font-size: 3.25rem;
     letter-spacing: 3px;
     margin-bottom: 10px;
 }
 
-.movieCarousel__trailer{
+.movieCarousel__trailer {
     animation-delay: 0.5s;
 }
 
-.movieCarousel__trailer>span{  /*">" gọi đến thẻ con trực tiếp */
+.movieCarousel__trailer>span {
+    /*">" gọi đến thẻ con trực tiếp */
     width: 48px;
     height: 48px;
     border-radius: 50%;
@@ -150,7 +155,7 @@ header p{
     line-height: 48px;
 }
 
-.movieCarousel__trailer button{
+.movieCarousel__trailer button {
     padding: 12px 24px;
     border: none;
     border-radius: 30px;
@@ -164,12 +169,12 @@ header p{
     outline: none;
 }
 
-.movieCarousel__trailer button:hover{
+.movieCarousel__trailer button:hover {
     color: white;
 }
 
 /* B1. xây dựng overlay phủ lên thẻ cha (button) */
-.movieCarousel__trailer button::before{
+.movieCarousel__trailer button::before {
     content: '';
     width: 110%;
     height: 100%;
@@ -185,16 +190,16 @@ header p{
     transition: all 1s;
 }
 
-.movieCarousel__trailer button:hover:before{
+.movieCarousel__trailer button:hover:before {
     transform: skewX(30deg) translateX(-10px);
 }
 
-.movieCarousel__trailer button span{
+.movieCarousel__trailer button span {
     position: relative;
     z-index: 2;
 }
 
-#carouselMovie .carousel-indicators{
+#carouselMovie .carousel-indicators {
     justify-content: flex-start;
     bottom: 10%;
     left: 50%;
@@ -205,7 +210,7 @@ header p{
     padding-left: 30px;
 }
 
-#carouselMovie .carousel-indicators li{
+#carouselMovie .carousel-indicators li {
     width: 10px;
     height: 10px;
     border-radius: 50%;
@@ -216,11 +221,11 @@ header p{
     /* background-clip: border-box; */
 }
 
-#carouselMovie .carousel-indicators li.active{
+#carouselMovie .carousel-indicators li.active {
     background-color: white;
 }
 
-.movieCarousel__overplay{
+.movieCarousel__overplay {
     position: absolute;
     top: 0;
     left: 0;
@@ -230,26 +235,27 @@ header p{
 }
 
 /* NEW IN */
-.newIn__title{
+.newIn__title {
     text-align: center;
 }
-.newIn__title h3{
+
+.newIn__title h3 {
     font-size: 18px;
     color: #4a4a4a;
     margin: 1rem 0;
 }
 
-.newIn__title i{
+.newIn__title i {
     color: #fbbd61;
 }
 
-.newIn__img{
+.newIn__img {
     position: relative;
     overflow: hidden;
     border-radius: 10px;
 }
 
-.newIn__overlay{
+.newIn__overlay {
     width: 200%;
     height: 100%;
     position: absolute;
@@ -261,11 +267,11 @@ header p{
     transition: all 0.5s;
 }
 
-.newIn__img:hover .newIn__overlay{
+.newIn__img:hover .newIn__overlay {
     transform: skewX(30deg) translateX(-30%);
 }
 
-.newIn__play{
+.newIn__play {
     position: absolute;
     top: 0;
     left: 0;
@@ -279,11 +285,11 @@ header p{
     transition: all 0.5s;
 }
 
-.newIn__img:hover .newIn__play{
+.newIn__img:hover .newIn__play {
     opacity: 1;
 }
 
-.newIn__play i{
+.newIn__play i {
     width: 80px;
     height: 80px;
     border: 2px solid white;
@@ -294,11 +300,11 @@ header p{
     transition: all 0.5s;
 }
 
-.newIn__play i:hover{
+.newIn__play i:hover {
     transform: scale(0.9);
 }
 
-.newIn__play a{
+.newIn__play a {
     color: white;
     text-decoration: none;
     text-transform: uppercase;
@@ -308,20 +314,21 @@ header p{
     margin: 1rem 0;
 }
 
-.newIn__play p{
+.newIn__play p {
     color: white;
 }
 
 /* SHOW TIMES */
-.showTimes .nav-tabs .nav-item.show .nav-link, .showTimes .nav-tabs .nav-link.active{
+.showTimes .nav-tabs .nav-item.show .nav-link,
+.showTimes .nav-tabs .nav-link.active {
     border: none;
 }
 
-.showTimes .nav-tabs .nav-link.active{
+.showTimes .nav-tabs .nav-link.active {
     color: #ec7532;
 }
 
-.showTimes .nav-tabs .nav-link{
+.showTimes .nav-tabs .nav-link {
     border: none;
     padding: 0;
     font-size: 18px;
@@ -329,43 +336,43 @@ header p{
     color: #4a4a4a;
 }
 
-.showTimes .nav-tabs .nav-item{
+.showTimes .nav-tabs .nav-item {
     margin-bottom: 0;
 }
 
-.showTimes .nav-tabs .nav-link span{
+.showTimes .nav-tabs .nav-link span {
     padding: 15px 30px;
     display: block;
 }
 
-.showTimes__row img{
+.showTimes__row img {
     border-radius: 10px;
 }
 
-.showTimes__row div p:first-of-type{
+.showTimes__row div p:first-of-type {
     font-size: 14px;
     letter-spacing: 2px;
     color: #ec7532;
     margin: 0;
 }
 
-.showTimes div h3{
+.showTimes div h3 {
     font-size: 24px;
     font-weight: 300;
     color: #010101;
     letter-spacing: 1px;
 }
 
-.showTimes__row{
+.showTimes__row {
     border-bottom: 1px solid #d8d8d8;
 }
 
 /* Để cụm film cuối cùng không có gạch ngang ở cuối */
-#myTabContent .tab-pane .showTimes__row:last-child{
+#myTabContent .tab-pane .showTimes__row:last-child {
     border-bottom: none;
 }
 
-.showTimes__row a{
+.showTimes__row a {
     font-size: 12px;
     letter-spacing: 4px;
     color: #ec7532;
@@ -373,24 +380,24 @@ header p{
     transition: all 0.5s;
 }
 
-.showTimes__row a:hover{
+.showTimes__row a:hover {
     color: #010101;
 }
 
-.showTimes__runingTimes{
+.showTimes__runingTimes {
     font-size: 12px;
     letter-spacing: 2px;
     color: #4a4a4a;
 }
 
-.showTimes__runingTimes button{
+.showTimes__runingTimes button {
     font-size: 14px;
     letter-spacing: 2px;
     color: #717171;
     background-color: #d8d8d8;
 }
 
-.showTimes__mins span:last-child{
+.showTimes__mins span:last-child {
     width: 33px;
     height: 33px;
     display: inline-block;
@@ -403,7 +410,7 @@ header p{
 }
 
 /* COMINGSOON */
-.comingSoon{
+.comingSoon {
     /* background-image: url(../img/slide-3.png); 
     Vì hình mờ, mà cần vừa hình vừa có nền tối nên dùng kết hợp*/
     background: #010101 url(../img/slide-3.png);
@@ -411,27 +418,27 @@ header p{
     color: white;
 }
 
-.commingSoon__type{
+.commingSoon__type {
     font-size: 14px;
     color: #ec7532;
     letter-spacing: 2px;
 }
 
-.comingSoon h3{
+.comingSoon h3 {
     font-size: 34px;
     letter-spacing: 1px;
     font-weight: 300;
 }
 
-.comingSoon__rating > i{
+.comingSoon__rating>i {
     color: #fbbd61;
 }
 
-.comingSoon p{
+.comingSoon p {
     margin: 1rem 0;
 }
 
-.comingSoon a{
+.comingSoon a {
     font-size: 12px;
     letter-spacing: 4px;
     color: #ec7532;
@@ -439,15 +446,15 @@ header p{
     transition: all 0.5s;
 }
 
-.comingSoon a:hover{
+.comingSoon a:hover {
     color: white;
 }
 
-.comingSoon__video{
+.comingSoon__video {
     position: relative;
 }
 
-.comingSoon__video i{
+.comingSoon__video i {
     position: absolute;
     /* công thức canh giữa một đối tượng nổi trên một đối tượng khác dùng position */
     top: 50%;
@@ -464,22 +471,22 @@ header p{
     color: white;
 }
 
-.comingSoon__video:hover i{
+.comingSoon__video:hover i {
     transform: translate(-50%, -50%) scale(0.9);
 }
 
 /* MOVIE LIST */
-.movieList{
+.movieList {
     background-color: #010101;
 }
 
-.movieList__item{
+.movieList__item {
     position: relative;
     border-radius: 10px;
     overflow: hidden;
 }
 
-.movieList__overlay{
+.movieList__overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -490,24 +497,110 @@ header p{
     transition: all 0.5s;
 }
 
-.movieList__item:hover .movieList__overlay{
+.movieList__item:hover .movieList__overlay {
     opacity: 0;
 }
 
 /* CONTACT */
-.contact__content{
+.contact__content {
     text-align: center;
 }
 
-.contact__content p:first-child{
+.contact__content p:first-child {
     font-size: 23px;
     color: #4a4a4a;
     letter-spacing: 1px;
     font-weight: 300;
 }
 
-.contact__content p:last-child{
+.contact__content p:last-child {
     font-size: 46px;
     color: #fbbd61;
     text-decoration: none;
+}
+
+/* FOOTER */
+footer {
+    background-color: #010101;
+}
+
+footer h3 {
+    font-size: 16px;
+    color: #ec7532;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+footer li {
+    list-style: none;
+}
+
+footer a {
+    font-size: 13px;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 1.5px;
+    padding: 3px;
+    transition: all 0.5s;
+}
+
+footer a:hover {
+    color: #fbbd61;
+    text-decoration: none;
+}
+
+.footer__copyright {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 15px 0;
+}
+
+.footer__copyright p {
+    margin-bottom: 0;
+}
+
+/* RESPONSIVE */
+/* header */
+@media screen and (max-width:991.98px) {
+    header .navbar-brand {
+        max-width: 180px;
+    }
+
+    header .navbar-brand img {
+        max-width: 100%;
+    }
+
+    #movieNavBar .navbar-nav .nav-link {
+        font-size: 14px;
+        padding: 20px 12px;
+        letter-spacing: 2px;
+    }
+}
+
+@media screen and (max-width:767.98px) {
+
+    /* global */
+    .line.active::after {
+        width: 0;
+    }
+
+    /* header */
+    header .navbar-toggler {
+        color: #fbbd61;
+    }
+
+    header .navbar-toggler:focus {
+        outline: none;
+    }
+
+    #movieNavBar .navbar-nav {
+        background-color: rgba(0, 0, 0, 0.9);
+        text-align: center;
+    }
+
+    #movieNavBar .navbar-nav .active .nav-link {
+        color: #ec7532;
+    }
+
+
 }
